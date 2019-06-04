@@ -1,23 +1,2 @@
 # hello-world
-Viên rất đẹp trai 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</table>
+Viên rất đẹp trai, hmmmmmm 
