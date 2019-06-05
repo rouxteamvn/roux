@@ -1,7 +1,9 @@
+<html>
 <head>
 <title>Roux or something</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
 <body>
 <div class="w3-container">
 <div class="w3-bar w3-border w3-light-grey">
@@ -11,86 +13,94 @@
   <a href="#" class="w3-bar-item w3-button w3-hover-red">Coming soon</a>
 </div>
 </div>
-    <title>CMLL trainer</title>
-    <style>
-        body {
-            background-color: pink;
-        }
-        .container {
-            margin-top: 100px;
-            text-align: center;
-        }
-        #timerLabel {
-            margin: 100px 0px;
-            color: white;
-        }
-        .myButton {
-            width: 180px;
-            height: 50px;
-            border: none;
-            border-radius: 6px;
-            background-color: white;
-            font-size: 16px;
-        }
-        .title, .myButton {
-            font-family: 'Berkshire Swash', cursive;
-            color: midnightblue;
-        }
-    </style>
-<div class="container">
-    <h1 class="title">CMLL trainer</h1>
-    <h1 id="timerLabel">00:00:00</h1>
-    <input type="button" class="myButton" onclick="start()" value="START" id="startBtn">
-    <input type="button" class="myButton" onclick="stop()" value="STOP">
-    <input type="button" class="myButton" onclick="reset()" value="RESET">
+<title>CMLL Trainer</title>
+<style>
+html,body{margin:0}
+td{text-align:center}
+body {background-color:pink}
+input[type="text"]{text-align:center;background-color:pink;color: solid black;border:0;font-weight:bold;font-size:25px}
+div{text-align:center}
+span{text-align:center;padding:4px}
+</style>
+<script src="/s/t.js" type="text/javascript" async></script>
+</head>
+<body>
+<div>			
+<form id="timer" name="timer" method="post" action="/timer.html">
+<input type="text" name="time" size="6" value="0.00" readonly="readonly"><br>
+<input type="text" name="now" id="now" value="Bắt đầu"><br>
+</form>
 </div>
 <script>
-    var status = 0; // 0:stop 1:running
-    var time = 0;
-    var startBtn = document.getElementById("startBtn");
-    var timerLabel = document.getElementById('timerLabel');
-	function start(){
-        status = 1;
-        startBtn.disabled = true;
-        timer();
+var a = null;
+var b = null;
+var nop = 0;
+var ready = 0;
+var now;
+
+function Now()
+{
+  now = document.getElementById("now").value;
+  if ( now == 'YO')
+  {
+    b = new Date();
+    var tmp = b.getTime() - a.getTime();
+    a.setTime(tmp);
+    var s = a.getSeconds();
+    var ms = Math.floor(a.getMilliseconds() / 10);
+    if ( ms < 10 )
+    {
+      ms = "0" + ms;
     }
-    function stop(){
-        status = 0;
-        startBtn.disabled = false;
+    document.timer.time.value = s + "." + ms;
+    document.getElementById("now").value = "Tiếp theo";
+  }
+  else
+  {
+    a = new Date();
+    document.timer.time.value = "";
+    document.getElementById("now").value = "YO";
+  }
+}
+document.onkeyup=function(k)
+{
+  if ( k.which == 32 )
+  {
+    if ( nop == 1 )
+    {
+      nop = 0;
     }
-    function reset(){
-        status = 0;
-        time = 0;
-        timerLabel.innerHTML = '00:00:00';
-        startBtn.disabled = false;
+    else
+    {
+      now = document.getElementById("now").value;
+      if ( now == 'Bắt đầu' || now == 'Chuẩn bị' )
+      {
+        Now();
+      }
     }
-    function timer(){
-        if (status == 1) {
-            setTimeout(function() {
-                time++;
-                var min = Math.floor(time/100/60);
-                var sec = Math.floor(time/100);
-                var mSec = time % 100;
-                if (min < 10) min = "0" + min;
-                if (sec >= 60) sec = sec % 60;
-                if (sec < 10) sec = "0" + sec;
-                if (mSec < 10) mSec = "0" + mSec;
-                timerLabel.innerHTML = min + ":" + sec + ":" + mSec;
-                timer();
-            }, 10);
-        }
+  }
+}
+document.onkeydown=function(k)
+{
+  if ( k.which == 32 )
+  {
+    now = document.getElementById("now").value;
+    if ( now == 'YO' )
+    {
+      Now();
+      nop = 1;
     }
-    document.onkeydown = function(event) { 
-        if (event) {
-            if (event.keyCode == 32 || event.which == 32) {
-                if(status == 1) {
-                    stop();
-                } else if (status == 0) {
-                    start();
-                }
-            }
-        }
-    };
+    else if ( now == 'Tiếp theo' )
+    {
+      document.getElementById("timer").submit();
+    }
+    else
+    {
+      document.timer.time.value = "";
+      document.getElementById("now").value = "Chuẩn bị";
+    }
+  }
+}
 </script>
 </body>
 </html>
