@@ -1,22 +1,69 @@
 <html>
 <head>
+<style>
+table,th,td {
+	border-bottom: 2px solid black;
+	border-collapse:collapse;
+}
+td {
+	padding: 10px;
+	text-align:left;
+}
+.lbox {
+	float: left;
+    clear: left;
+    width: 50%;
+    padding-right: 4px;
+    border-right: thin #bbb solid;
+    border-bottom: thin #bbb solid;
+}
+h3 {
+    text-align: center;
+    display: block;
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+</style>
 <title>Roux or something</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
+<style>
+</style>
 <body>
 <div class="w3-container">
 <div class="w3-bar w3-border w3-light-grey">
   <a href="index.html" class="w3-bar-item w3-button w3-hover-yellow">Home</a>
   <a href="cmll.html" class="w3-bar-item w3-button w3-hover-green">CMLL algs</a>
-  <a href="fb.html" class="w3-bar-item w3-button w3-hover-blue">Block</a>
+  <a href="fb.html" class="w3-bar-item w3-button w3-hover-blue">FB</a>
   <a href="#" class="w3-bar-item w3-button w3-hover-red">Coming soon</a>
+</div>
+</div>
+<div class=lbox>
+<h3> "Pair" </h3>
+<b>Ghi chú</b>: Cứ đơn giản là tìm các Pair (góc-cạnh) ghép lại với nhau
+ rồi đưa vào block sao cho các bước giải là tối ưu nhất có thể. 
+ Cách làm này ta sử dụng rất nhiều trong quá trình giải.
+<table>
+<tbody>
+<tr>
+<td>
+<div class=roofpig style="width:100px; height:100px;"
+  data-config="alg=R'|colored=RF LF DF DFR DFL F|colors=F:r D:w R:g L:b"></div></td>
+</td>
+<td>
+<div class=roofpig style="width:100px; height:100px;"
+  data-config="alg=R|colored=RF LF DF DFR DFL F|colors=F:r D:w R:g L:b"></div></td>
+</td>
+</tr>
+</tbody>
+</table>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="Roofpig/roofpig_and_three.min.js"></script>
-</div>
-<div class=roofpig style="width:100px; height:100px;"
-  data-config="alg=L' U2 L U2 R U' L' U L+R'|solved=F-|colors=F:b B:g U:r D:o R:w L:y">
-</div>
 </body>
-</html>
+</html> 
