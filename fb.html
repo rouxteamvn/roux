@@ -16,6 +16,12 @@ td {
     border-right: thin #bbb solid;
     border-bottom: thin #bbb solid;
 }
+.rbox {
+	float: right;
+    clear: right;
+    width: 49%;
+	border-bottom: thin #bbb solid;
+}
 h3 {
     text-align: center;
     display: block;
@@ -28,7 +34,7 @@ h3 {
 }
 </style>
 <title>Roux or something</title>
-<meta name="viewport" content="width=device-width, initial-scale=0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
 <style>
@@ -42,7 +48,7 @@ h3 {
   <a href="#" class="w3-bar-item w3-button w3-hover-red">Coming soon</a>
 </div>
 </div>
-<div class=lbox>
+<div class=rbox>
 <h3> "Pair" </h3>
 <b>Ghi chú</b>: Cứ đơn giản là tìm các Pair (góc-cạnh) ghép lại với nhau
  rồi đưa vào block sao cho các bước giải là tối ưu nhất có thể. 
@@ -52,12 +58,46 @@ h3 {
 <tr>
 <td>
 <div class=roofpig style="width:100px; height:100px;"
-  data-config="alg=R'|colored=RF LF DF DFR DFL F|colors=F:r D:w R:g L:b"></div></td>
+  data-config="alg=L|colored= LF DF DFL F|colors=F:r D:w R:g L:b"></div></td>
+</td>
+<td>
+<td>
+<div class=roofpig style="width:100px; height:100px;"
+  data-config="alg=R2'|colored=RF DF DFR F |colors=F:r D:w R:g L:b"></div></td>
 </td>
 <td>
 <div class=roofpig style="width:100px; height:100px;"
-  data-config="alg=R|colored=RF LF DF DFR DFL F|colors=F:r D:w R:g L:b"></div></td>
+  data-config="alg=R|colored=RF DF DFR F|colors=F:r D:w R:g L:b"></div>
+</td> 
+<td>
+<div class=roofpig style="width:100px; height:100px;"
+  data-config="alg=D'|colored=RF DF DFR F|colors=F:r D:w R:g L:b"></div>
+</td> 
+</tr>
+</tbody>
+</table>
+</div>
+<div class=lbox>
+<h3> "Tạo Pair" </h3>
+<b>Ghi chú</b>: Trong quá trình tìm một block tốt, có lúc các bạn sẽ không 
+được cho sẵn một cái gì đó (Pair, 1x2x2,...). Lúc này, đây sẽ là một lựa chọn được ưu ái.
+Tìm một góc và một cạnh hoặc một cạnh và một tâm, ghép nó vào nhau để tạo thành một "Pair", rồi triển khai tương tự "Pair".
+<table>
+<tbody>
+<tr>
+<td>
+<div class=roofpig style="width:100px; height:100px;"
+  data-config="alg=R'|colored= UF UFR|colors=U:g F:r R:w "></div></td>
 </td>
+<td>
+<td>
+<div class=roofpig style="width:100px; height:100px;"
+  data-config="alg=L' B2'|colored= DR DBR |colors=colors=D:w R:r B:g "></div></td>
+</td>
+<td>
+<div class=roofpig style="width:100px; height:100px;"
+  data-config="alg=U' R'|colored= F FR|colors=F:r D:w R:g L:b"></div>
+</td> 
 </tr>
 </tbody>
 </table>
