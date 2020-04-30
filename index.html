@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href ="css.css"/>
+    </head>
+    <body>
+        <p><strong>Hướng dẫn:</strong> Chọn câu hỏi (1, 2...) và nhấn nút số tương ứng với câu hỏi đó để đoán từng chữ cái.</p>
+        <p><strong>Lưu ý:</strong>Viết hoa chữ cái để trả lời.</p>
+        <button onclick="guessing(0)">1</button>
+        <button onclick="guessing(1)">2</button>
+        <button onclick="guessing(2)">3</button>
+        <button onclick="guessing(3)">4</button>
+        <button onclick="guessing(4)">5</button>
+        <button onclick="guessing(5)">6</button>    
+        <p>Ô chữ dự đoán: </p>   
+        <div id = "tab"></div>
+        <div id = "answer"></div>
+        <div id = "check"></div>  
+        <img id="hangman" src="hangman.jpg" width="200" height="300">   
+        <canvas id="myCanvas" width="200" height="300"></canvas>
+    </body>
+    <script  src = "hangman.js"></script>
+    <script src = "drawman.js"></script>
+    <script src = "table.js"></script>
+</html>

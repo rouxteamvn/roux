@@ -1,0 +1,22 @@
+#tab table
+{
+    border: thin black solid;
+}
+
+#tab table tr td
+{
+    padding:5px;
+    border: thin black solid;
+}
+
+canvas
+{
+    border: 1px solid black;
+    margin-left: 10cm;
+    margin-top: -2cm;
+}
+
+img 
+{
+    display: none;
+}
