@@ -35,10 +35,10 @@ function checkExist(char,string)
 function guessing(id)
 {
     init(id);   
-    // force to enter guess
+    // force to enter guess  
     do
     {
-        guess = prompt("Nhập đi em :))", "1 từ thôi, nhiều sai ráng chịu :D");
+        guess = prompt("Nhập đi em :))");
 
     }while(guess == false);
 
